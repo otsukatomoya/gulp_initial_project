@@ -23,6 +23,16 @@
 * デフォルトのタスクコマンド「$ gulp」においては、Sass/CoffeeScriptのコンパイルおよびHTML/CSS/JSの監視
 * 「$ gulp release」においては、CSS Autoprefixer/JS Concat&Uglify/Image Minifyを行う
 
+## Author
+
+### Tomoya Otsuka
+
+I am a Designer.
+
+* [Portfolio](http://otsukatomoya.com)
+* [twitter](https://twitter.com/tomoya_otsuka)
+* [Pinterest](http://jp.pinterest.com/tomoyaotsuka/)
+
 ## Log
 
 ### 2014.09.09
