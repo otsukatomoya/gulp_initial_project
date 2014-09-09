@@ -1,0 +1,1 @@
+test = console.log('gulp test console')
