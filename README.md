@@ -42,6 +42,7 @@ Released under the MIT License, see LICENSE.txt.
 ### 2014.09.11
 
 * gulp-cache追加（圧縮処理後の画像については判定外にする）
+* src, dest 各パスをオブジェクトで管理
 
 ### 2014.09.09
 
