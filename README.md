@@ -33,6 +33,10 @@ I am a Designer.
 * [twitter](https://twitter.com/tomoya_otsuka)
 * [Pinterest](http://jp.pinterest.com/tomoyaotsuka/)
 
+## License
+
+Released under the MIT License, see LICENSE.txt.
+
 ## Log
 
 ### 2014.09.09
