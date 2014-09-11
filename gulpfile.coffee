@@ -64,7 +64,10 @@ gulp.task 'uglify', ->
 
 gulp.task 'image', ->
   gulp.src '_template/img/*'
-    .pipe $.image()
+    .pipe $.cache($.image({
+      progressive: true
+      interlaced: true
+    }))
     .pipe gulp.dest '_template/img/'
 
 
