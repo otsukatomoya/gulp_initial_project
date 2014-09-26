@@ -74,6 +74,12 @@ gulp.task 'image', ->
     }))
     .pipe gulp.dest Path.dest + 'img/'
 
+gulp.task 'svg', ->
+  gulp.src Path.src + 'img/*.svg'
+    .pipe $.svgmin()
+    .pipe gulp.dest Path.dest + 'img/'
+
+
 
 # Tasks
 
