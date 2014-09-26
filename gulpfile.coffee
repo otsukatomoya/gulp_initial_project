@@ -87,7 +87,7 @@ gulp.task 'bsReload', ->
   browserSync.reload()
 
 gulp.task 'release', ->
-  gulp.run 'ple', 'concat', 'uglify', 'image'
+  gulp.run 'ple', 'concat', 'uglify', 'image', 'svg'
 
 
 # Watch
