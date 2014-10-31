@@ -8,6 +8,8 @@
 * CoffeeScript
 * JavaScript Concat&Uglify
 * Imagefile Minify
+* SVG Sprites
+* SVG Minify
 * BrowserSync
 
 ※ CSS Autoprefixer...オートプリフィックスに加え、メディアクエリの一括化も行う。  
@@ -21,7 +23,8 @@
     $ gulp
 
 * デフォルトのタスクコマンド「$ gulp」においては、Sass/CoffeeScriptのコンパイルおよびHTML/CSS/JSの監視
-* 「$ gulp release」においては、CSS Autoprefixer/JS Concat&Uglify/Image Minifyを行う
+* 「$ gulp svg」...assets/svg/sprites内のsvgでSVGスプライトを生成、圧縮する
+* 「$ gulp release」...CSS Autoprefixer/JS Concat&Uglify/Image Minifyを行う
 
 ## Author
 
@@ -38,6 +41,11 @@ I am a Designer.
 Released under the MIT License, see LICENSE.txt.
 
 ## Log
+
+### 2014.10.31
+
+* gulp-svg-spritesの追加
+* img, css, jsをassets内で管理
 
 ### 2014.09.26
 

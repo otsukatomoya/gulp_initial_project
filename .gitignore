@@ -10,11 +10,8 @@
 
 /node_modules/
 
-/_template/assets/svg/.DS_Store
-
 /_template/assets/.DS_Store
 /_template/assets/css/.DS_Store
 /_template/assets/css/lib/.DS_Store
 /_template/assets/img/.DS_Store
 /_template/assets/js/.DS_Store
-/_template/assets/svg/sprites/.DS_Store

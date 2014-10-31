@@ -24,6 +24,7 @@
     "browser-sync": "^1.3.6",
     "gulp-pleeease": "^1.0.4",
     "gulp-cache": "^0.2.2",
-    "gulp-svgmin": "^0.4.6"
+    "gulp-svgmin": "^0.4.6",
+    "gulp-svg-sprites": "^1.0.3"
   }
 }
