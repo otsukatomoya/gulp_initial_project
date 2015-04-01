@@ -2,18 +2,18 @@
 
 ## Spec
 
+* BrowserSync
 * Slim
+* ejs (Template Engine)
 * Sass
 * CSS Autoprefixer
 * CoffeeScript
 * JavaScript Concat&Uglify
 * Imagefile Minify
 * SVG Sprites
-* SVG Minify
-* BrowserSync
 
-※ CSS Autoprefixer...オートプリフィックスに加え、メディアクエリの一括化も行う。  
 ※ BrowserSync... ファイルの編集/保存により、リアルタイムでブラウザが更新。またGoogle Chromeで行った操作、たとえばスクロールなどについても、その他ブラウザに反映される。
+※ CSS Autoprefixer...オートプリフィックスに加え、メディアクエリの一括化も行う。
 
 ## Usage
 
@@ -23,8 +23,6 @@
     $ gulp
 
 * デフォルトのタスクコマンド「$ gulp」においては、Sass/CoffeeScriptのコンパイルおよびHTML/CSS/JSの監視
-* 「$ gulp svg」...assets/svg/sprites内のsvgでSVGスプライトを生成、圧縮する
-* 「$ gulp release」...CSS Autoprefixer/JS Concat&Uglify/Image Minifyを行う
 
 ## Author
 
@@ -32,7 +30,7 @@
 
 I am a Designer.
 
-* [Portfolio](http://otsukatomoya.com)
+* [Portfolio](http://strangr.jp)
 * [twitter](https://twitter.com/tomoya_otsuka)
 * [Pinterest](http://jp.pinterest.com/tomoyaotsuka/)
 
@@ -41,6 +39,10 @@ I am a Designer.
 Released under the MIT License, see LICENSE.txt.
 
 ## Log
+
+### 2015.04.01
+
+* gulp-ejsの追加
 
 ### 2014.10.31
 

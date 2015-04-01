@@ -16,6 +16,7 @@ gulp.task 'bs', ->
       baseDir: Path.src
   })
 
+
 # HTML
 
 gulp.task 'slim', ->
@@ -23,27 +24,36 @@ gulp.task 'slim', ->
     .pipe $.slim()
     .pipe gulp.dest Path.dest
 
+gulp.task 'ejs', ->
+  # json = JSON.parse fs.readFileSync('./index.json')
+  gulp.src([
+    Path.src + '**/*.ejs'
+    '!' + Path.src + '**/_*.ejs'
+  ])
+  .pipe $.ejs()
+  .pipe gulp.dest Path.dest
+  .pipe browserSync.reload(stream: true, once: true)
+
 
 # StyleSheet
 
 gulp.task 'sass', ->
-  gulp.src Path.src + 'assets/css/*.scss'
-    .pipe $.rubySass
-      style: 'compressed'
-      sourcemap: true
-      sourcemapPath: '../assets/css/'
-      noCache: true
-    .pipe gulp.dest Path.dest + 'assets/css/'
-    .pipe browserSync.reload(stream: true, once: true)
-
-gulp.task 'ple', ->
-  gulp.src Path.src + 'assets/css/*.css'
-    .pipe $.pleeease
-      fallbacks:
-        autoprefixer: ["last 4 versions"]
-      optimizers:
-        minifier: false
-    .pipe gulp.dest Path.dest + 'assets/css/'
+  gulp.src([
+    Path.src + 'assets/css/**/*.scss'
+    '!' + Path.src + 'assets/css/_lib/*.scss'
+  ])
+  .pipe $.rubySass
+    style: 'compressed'
+    sourcemap: false
+    sourcemapPath: '../assets/css/'
+    noCache: true
+  .pipe $.pleeease
+    fallbacks:
+      autoprefixer: ["last 4 versions"]
+    optimizers:
+      minifier: false
+  .pipe gulp.dest Path.dest + 'assets/css/'
+  .pipe browserSync.reload(stream: true, once: true)
 
 
 # JavaScript
@@ -56,11 +66,11 @@ gulp.task 'coffee', ->
 
 gulp.task 'concat', ->
   gulp.src Path.src + 'assets/js/*.js'
-    .pipe $.concat('stats.js')
+    .pipe $.concat('mod.js')
     .pipe gulp.dest Path.dest + 'assets/js/'
 
 gulp.task 'uglify', ->
-  gulp.src Path.src + 'assets/js/stats.js'
+  gulp.src Path.src + 'assets/js/mod.js'
     .pipe $.uglify()
     .pipe gulp.dest Path.dest + 'assets/js/'
 
@@ -75,18 +85,12 @@ gulp.task 'image', ->
     }))
     .pipe gulp.dest Path.dest + 'assets/img/'
 
-gulp.task 'sprites', ->
+gulp.task 'svg', ->
   gulp.src Path.src + 'assets/svg/sprites/*.svg'
     .pipe svgSprites({
       mode: "symbols"
-      selector: "icon-%f"
     })
     .pipe gulp.dest Path.dest + 'assets'
-
-gulp.task 'svgmin', ->
-  gulp.src Path.src + 'assets/svg/sprite.svg'
-    .pipe $.svgmin()
-    .pipe gulp.dest Path.dest + 'assets/svg/'
 
 
 # Tasks
@@ -94,16 +98,14 @@ gulp.task 'svgmin', ->
 gulp.task 'bsReload', ->
   browserSync.reload()
 
-gulp.task 'svg', ->
-  gulp.run 'sprites', 'svgmin'
-
-gulp.task 'release', ->
-  gulp.run 'ple', 'concat', 'uglify', 'image'
-
 
 # Watch
 
 gulp.task 'default', ['bs'], ->
   gulp.watch Path.src + '*.html', ['bsReload']
+  gulp.watch Path.src + '**/*.ejs', ['ejs']
   gulp.watch Path.src + 'assets/css/**/*.scss', ['sass']
+  gulp.watch Path.src + 'assets/js/**/*.js', ['bsReload']
   gulp.watch Path.src + 'assets/js/*.coffee', ['coffee']
+
+
